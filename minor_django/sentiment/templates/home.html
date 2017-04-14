@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Twitter Personality Assessment</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" href="{% static 'sentiment/css/fav.png' %}" sizes="16x16"></link>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="author" content="Bharat Sahni|Swati Chauhan" />
+  	<meta name="description" content="SentimentAnalysis website" />
+  	<meta name="keywords" content="Sentiment, SentimentAnalysis, minor project" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sentiment/css/bootstrap.min.css' %}" type = "text/css"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/home.css' %}">
+	
+</head>
+
+<body >
+<div class="sec1">
+	<h1>TWITTER PERSONALITY ASSESSMENT</h1>
+<div class="search">	
+<center>
+<form  method="POST" action="">{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" class="btn btn-primary btn-md aboutbtn" value="Analyze">
+</form>
+</center>
+</div>
+</div>
+	
+</body>
+
+</html>

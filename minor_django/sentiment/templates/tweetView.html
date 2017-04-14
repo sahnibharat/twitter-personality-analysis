@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Result|Twitter Personality Analysis</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" href="{% static 'sentiment/css/fav.png' %}" sizes="16x16"></link>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="author" content="Bharat Sahni|Swati Chauhan" />
+  	<meta name="description" content="SentimentAnalysis website" />
+  	<meta name="keywords" content="Sentiment, SentimentAnalysis, minor project" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sentiment/css/bootstrap.min.css' %}" type = "text/css"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/tweetview.css' %}">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Sentiment');
+        data.addColumn('number', 'Weightage');
+        data.addRows([
+          ['Positive', {{posPer}}],
+          ['Negative', {{negPer}}],
+          ['Neutral', {{neutPer}}]
+        ]);
+
+        // Set chart options
+        var mq = window.matchMedia( "(max-width: 760px)" );
+        if(mq.matches){
+        var options = {'title':'Pie Chart for Sentiment Division',
+                       'width':400,
+                       'height':300,
+                   'backgroundColor': 'transparent',
+						'is3D':true,
+					'titleTextStyle' :{
+							'color':'white',
+							'fontSize' : 18,
+							'bold':true,
+							'forcelFrame':true
+
+						}};
+                       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        
+                }
+        else
+        {
+          var options = {'title':'Pie Chart for Sentiment Division',
+                       'width':1000,
+                       'height':500,
+                   		'backgroundColor': 'transparent',
+						'is3D':true,
+						'titleTextStyle' :{
+							'color':'white',
+							'fontSize' : 30,
+							'bold':true,
+							'forcelFrame':true,
+							'marginRight':15
+
+						}
+					};
+                       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+       
+        }
+        // Instantiate and draw our chart, passing in some options.
+       chart.draw(data, options); 
+      }
+    </script>
+    <h1>RESULT</h1>
+<div class="tweet" id="tweets">
+<h1>Positive Tweets</h1>
+{% for tweets in posTweet %}
+    <h6>>>{{ tweets }}</h6>
+{% endfor %}
+<hr>
+<h1>Negative Tweets</h1>
+
+{% for tweets in negTweet %}
+        <h6>>>{{ tweets }}</h6>
+{% endfor %}
+<hr>
+<h1>Neutral Tweets</h1>
+
+{% for tweets in neutTweet %}
+        <h6>>>{{ tweets }}</h6>
+{% endfor %}
+<hr>
+<center>
+     <div id="chart_div"></div></center>
+     {% load staticfiles %}
+     <div id="thanks"><img src="{% static 'sentiment/css/thnku.png' %}" class="img-responsive" style="width: 35%"></div>
+</div>
+</body>
+</html>
