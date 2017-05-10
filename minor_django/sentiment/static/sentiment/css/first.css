@@ -1,0 +1,105 @@
+body,html{
+	min-height: 100%;
+	width: 100%;
+	background-image: url('senti.jpg');
+	background-size: cover;
+	position: relative;
+	transition: background-color .5s ease;
+}
+@font-face{
+	font-family: intro;
+	src:url(KBPlanetEarth.ttf);
+}
+.sec1{
+	min-height: 100%;
+	width: 100%;
+	color: black;
+	background: rgba(0,0,0,0.6);
+}
+.sec1 h1{
+	font-size:5vw;
+	padding-top: 3vw;
+	margin-top: 0px;
+	color:white;
+	text-align: center;
+	font-family: intro;
+}
+.sec3{
+	display: inline-block;
+	width: 100%;
+	padding-left: 8%;
+	padding-bottom: 5%;
+	min-height: 100%;
+	color: #262626;
+	font-family: intro;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.crdimg,.middle{
+	width: 95%;
+	display: block;
+	transition: .5s ease;
+}
+.crdimg{
+	border-color: #262626;
+	backface-visibility: hidden;
+	border-width: .75vw;
+	margin-left:3%;
+	margin-top: 3%;
+	border-style: solid;
+	margin-right: 2%;
+
+	
+}
+.middle{
+	transition: .5s ease;
+  	opacity: 0;
+  	position: absolute;
+  	width: 90%;
+  	height: 84%;
+  	margin-left: 0%;
+  	margin-top: 0;
+  	margin-bottom: 15%;
+  	top: 40%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+	
+}
+.card a{
+	text-decoration: none;
+}
+.card:hover .middle{
+	opacity: 1;
+
+}
+.card:hover .img-circle{
+	border-radius: 0;
+}
+
+.imgcardtext{
+	background-color: #0099ff;
+	font-size: 2vw;
+  position: absolute;
+  text-align: center;
+  bottom:25%;
+  font-family: open-sans-light;
+  padding: 2%;
+  color: white;
+}
+.card{
+	padding-bottom: 2vw;
+	height: 75%;
+	position: relative;
+	float: left;
+	padding-right: 2%;
+	width:35%;
+	transition: 0.5s;	
+}
+
+.card h2{
+	color: white;
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+}
