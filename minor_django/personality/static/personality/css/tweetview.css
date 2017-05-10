@@ -1,0 +1,34 @@
+body,html{
+	height: 100%;
+	width: 100%;
+	background-image: url('senti1.png');
+	background-size: cover;
+	position: relative;
+	transition: background-color .5s ease;
+}
+
+@font-face{
+	font-family: intro;
+	src:url(KBPlanetEarth.ttf);
+}
+h1{
+	font-size:5vw;
+	padding-top: 3vw;
+	margin-top: 0px;
+	color:white;
+	text-align: center;
+	font-family: intro;
+}
+h6{
+	font-size: 1.5vw;
+	font-weight: bold;
+	color: white;
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+}
+.tweet{
+	background-image: url('senti1.png');
+	background-size: contain;
+	position: relative;
+	padding: 2vw;
+}

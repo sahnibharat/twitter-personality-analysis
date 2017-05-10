@@ -1,0 +1,71 @@
+body,html{
+	height: 100%;
+	width: 100%;
+	background-image: url('senti.jpg');
+	background-size: cover;
+	position: relative;
+	transition: background-color .5s ease;
+}
+@font-face{
+	font-family: intro;
+	src:url(KBPlanetEarth.ttf);
+}
+.sec1{
+	height: 100%;
+	width: 100%;
+	color: black;
+	background: rgba(0,0,0,0.6);
+}
+.btn{
+	font-size: 1.6vw;
+	border-radius: 40px;
+	border:solid;
+	border-color:white;
+	border-width: 0.2vw;
+	padding: 1%;
+	background-color: #595959;
+	color: white;
+	margin-top: 2vw;
+}
+.btn:hover{
+	background-color:white;
+	color: #595959; 
+}
+.sec1 h1{
+	font-size:5vw;
+	padding-top: 3vw;
+	margin-top: 0px;
+	color:white;
+	text-align: center;
+	font-family: intro;
+}
+.search{
+	padding-top:  10%;
+	padding-left: 15%;
+	width: 80vw;
+}
+.search p{
+	color: white;
+	font-size: 2vw;
+}
+input[type=text] {
+    width: 19vw;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #595959;
+    background: rgba(0,0,0,0.6);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 80%;
+}
+input[type=text]:focus .search p{
+	color: black;
+}

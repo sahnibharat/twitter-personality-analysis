@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Result|Twitter Personality Assessment</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" href="{% static 'sentiment/css/fav.png' %}" sizes="16x16"></link>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="author" content="Bharat Sahni|Swati Chauhan" />
+  	<meta name="description" content="SentimentAnalysis website" />
+  	<meta name="keywords" content="Sentiment, SentimentAnalysis, minor project" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personality/css/bootstrap.min.css' %}" type = "text/css"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'personality/css/perview.css' %}">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {packages: ['corechart']});     
+   </script>
+
+	<script language="JavaScript">
+function drawChart() {
+   // Define the chart to be drawn.
+   var data = google.visualization.arrayToDataTable([
+      ['Personality Traits', 'Score'],
+	  ['Agreeableness',  {{ agree }}],
+      ['Optimist',  {{opti}}],
+      ['Pessimist',  {{pessi}}],
+      ['Viewholder',  {{view}}],
+      ['Spectator',  {{spec}}],
+      ['SocialBird',  {{social}}],
+      ['GrammarNazi', {{gram}}]
+      ]);
+
+   var options = {
+      title: 'Personality Assessment'	  
+   }; 
+
+   // Instantiate and draw the chart.
+   var chart = new google.visualization.BarChart(document.getElementById('container'));
+   chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+</script>
+</head>
+<body>
+<h1>@{{ user }} Personality Result</h1>
+<br>
+<hr>
+<br>
+<div class="image" ><img src="{{ img }}" alt="Profile Pic" style="width: 12vw;"></div>
+<h6>Name:{{ name }}</h6>
+<h6>Followers:{{ followers }}</h6>
+<h6>Following: {{ following }}</h6>
+<h6>Tweets:{{ tweets }}</h6>
+<h6>{{public}}</h6>
+<center><div id="container" style="width: 650px; height: 750px; margin: 0 auto"></div></center>
+<h6>
+	KEY:
+</h6>
+<h6>
+	1.Agreeableness:The score of this category depicts how much the person agrees with the opinion of the masses.
+</h6>
+<h6>
+	2.Optimist:The score of this category depicts how much a person is optimist in his tweets.
+</h6>
+<h6>
+	3.Pessimist:The score of this category depicts how much a person is pessimist in his tweets.
+</h6>
+<h6>
+	4.ViewHolder:The score of this category depicts how different a person thinks from the masses.
+</h6>
+<h6>
+	5.Spectator:The score of this category depicts how much a person likes to keep his views neutral even when the masses have an opinion for something.
+</h6>
+<h6>
+	6.GrammarNazi:The score of this category depicts how much a person cares about grammar while tweeting.
+</h6>
+<h6>
+	7.SocialBird:The score of this category depicts how much time a person gives to social networking.
+</h6>
+<hr>
+<br>
+	<div class="parsed">
+	<h6>
+	Tweets parsed:
+</h6>
+{% for tweets in parsed %}
+        <h5 style="color: white;font-size: 1.5vw;padding-left: 7%;">>>{{ tweets.text }}</h5>
+{% endfor %}
+
+<div id="thanks"><img src="{% static 'sentiment/css/thnku.png' %}" class="img-responsive" style="width: 35%"></div>
+</div>
+</body>
+</html>
