@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-import sentiment.views 
+import sentiment.views
+import personality.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', sentiment.views.home),
-    url(r'^tweetView/$', sentiment.views.tweetView),
+    url(r'^$', sentiment.views.firstPage),
+    url(r'^query$',sentiment.views.home),
+    url(r'^tweetView$', sentiment.views.tweetView),
+    url(r'^personquery/$', personality.views.home),
+    url(r'^personquery/personAssess$', personality.views.personAssess),
 ]
