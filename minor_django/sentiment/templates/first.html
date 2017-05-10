@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Twitter Personality Assessment</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" href="{% static 'sentiment/css/fav.png' %}" sizes="16x16"></link>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="author" content="Bharat Sahni|Swati Chauhan" />
+  	<meta name="description" content="SentimentAnalysis website" />
+  	<meta name="keywords" content="Sentiment, SentimentAnalysis, minor project" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sentiment/css/bootstrap.min.css' %}" type = "text/css"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/first.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<!--<link rel="stylesheet" type="text/css" href="w3.css">-->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+</head>
+<body >
+<div class="sec1">
+	<h1>CHOOSE YOUR OPTIONS</h1>
+<div class="sec3">	
+	<div class="card " style="margin-right: 10vw;margin-left: 3vw">
+	{% load staticfiles %}
+          <a href="query"><img class="crdimg img-circle img-responsive" src="{% static "sentiment/img/query.png" %}">
+            <div class="middle">
+               <div class="imgcardtext">Open Query Box</div>
+            </div>
+          <h2 >Choose Query</h2></a>
+    </div>
+
+    <div class="card ">
+	{% load staticfiles %}
+          <a href="personquery"><img class="crdimg img-circle img-responsive"  src="{% static "sentiment/img/person.png" %}">
+            <div class="middle">
+               <div class="imgcardtext">Open Personality Test</div>
+            </div>
+          <h2 >Choose Personality Test</h2></a>
+    </div>
+</div>
+</div>
+	
+</body>
+
+</html>
